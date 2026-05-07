@@ -11,7 +11,7 @@ const Navbar = () => {
                 <a href="" className='hover:text-gray-300'>Blog</a>
                 <a href="" className='hover:text-gray-300'>Download</a>
                 <a href="" className='hover:text-gray-300'>Contact</a>
-                <button className='bg-red-500 hover:bg-red-600 px-4 py-2 rounded font-semibold'>+ New Ticket</button>
+                <button className='bg-red-500 hover:bg-red-600 px-4 py-2 ml-2 rounded font-semibold'>+ New Ticket</button>
             </div>
         </nav>
     );

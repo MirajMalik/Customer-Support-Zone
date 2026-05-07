@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "title": "Login page not loading",
+    "description": "Users are unable to access the login page after the latest deployment.",
+    "customer": "Acme Corp",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-05-01"
+  },
+  {
+    "id": 2,
+    "title": "Payment gateway timeout",
+    "description": "Transactions are failing due to timeout errors from the payment provider.",
+    "customer": "Bright Solutions",
+    "priority": "Critical",
+    "status": "In Progress",
+    "createdAt": "2026-05-01"
+  },
+  {
+    "id": 3,
+    "title": "Dashboard charts not updating",
+    "description": "Analytics charts are showing stale data for the last 24 hours.",
+    "customer": "Nexa Ltd",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2026-05-02"
+  },
+  {
+    "id": 4,
+    "title": "Unable to reset password",
+    "description": "Password reset emails are not being delivered to users.",
+    "customer": "TechNova",
+    "priority": "High",
+    "status": "Resolved",
+    "createdAt": "2026-05-02"
+  },
+  {
+    "id": 5,
+    "title": "Mobile layout broken",
+    "description": "UI elements overlap on smaller screen devices.",
+    "customer": "GreenLeaf",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "2026-05-03T10:05:00Z"
+  },
+  {
+    "id": 6,
+    "title": "API returning 500 error",
+    "description": "Customer data endpoint is throwing internal server errors.",
+    "customer": "SkyNet Inc",
+    "priority": "Critical",
+    "status": "In Progress",
+    "createdAt": "2026-05-03"
+  },
+  {
+    "id": 7,
+    "title": "Email notifications delayed",
+    "description": "Notification emails are arriving several hours late.",
+    "customer": "BlueOcean",
+    "priority": "Medium",
+    "status": "Pending",
+    "createdAt": "2026-05-04"
+  },
+  {
+    "id": 8,
+    "title": "Search functionality slow",
+    "description": "Search queries take more than 10 seconds to return results.",
+    "customer": "Vertex Systems",
+    "priority": "High",
+    "status": "In Progress",
+    "createdAt": "2026-05-04"
+  },
+  {
+    "id": 9,
+    "title": "File upload failing",
+    "description": "Users cannot upload PDF documents larger than 5MB.",
+    "customer": "AlphaEdge",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2026-05-05"
+  },
+  {
+    "id": 10,
+    "title": "Incorrect invoice totals",
+    "description": "Tax calculations are producing incorrect invoice amounts.",
+    "customer": "FinCore",
+    "priority": "Critical",
+    "status": "Resolved",
+    "createdAt": "2026-05-05"
+  },
+  {
+    "id": 11,
+    "title": "Session expires too quickly",
+    "description": "Users are being logged out after only 5 minutes of inactivity.",
+    "customer": "CloudPeak",
+    "priority": "Low",
+    "status": "Pending",
+    "createdAt": "2026-05-06T08:00:00Z"
+  },
+  {
+    "id": 12,
+    "title": "Dark mode toggle not working",
+    "description": "Theme switch button does not apply dark mode correctly.",
+    "customer": "PixelCraft",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "2026-05-06T12:50:00Z"
+  },
+  {
+    "id": 13,
+    "title": "Data export generates empty file",
+    "description": "CSV exports are downloaded without any data rows.",
+    "customer": "Insight Labs",
+    "priority": "High",
+    "status": "In Progress",
+    "createdAt": "2026-05-06T17:10:00Z"
+  },
+  {
+    "id": 14,
+    "title": "User roles not updating",
+    "description": "Admin role changes are not reflected immediately in the system.",
+    "customer": "Orbit Tech",
+    "priority": "Medium",
+    "status": "Pending",
+    "createdAt": "2026-05-07"
+  },
+  {
+    "id": 15,
+    "title": "Two-factor authentication issue",
+    "description": "OTP verification fails for some international users.",
+    "customer": "SecureWave",
+    "priority": "Critical",
+    "status": "Open",
+    "createdAt": "2026-05-07"
+  }
+]
