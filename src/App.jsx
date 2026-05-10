@@ -18,15 +18,11 @@ function App() {
       <Navbar/> 
 
       <div className="max-w-7xl mx-auto px-4 pt-16">
-        <CounterCard />
-      
+        <CounterCard />    
         <Suspense fallback = {<span className=" flex items-center justify-center mx-auto">Loading..</span>}>
           <Tickets ticketsPromise = {ticketsPromise}/>
         </Suspense>
       </div>
-      
-     
-      
     </div>
   )
 }

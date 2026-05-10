@@ -5,7 +5,11 @@ const TicketsCard = ({ticket}) => {
         <div className="bg-white flex flex-col border border-gray-200 rounded-lg shadow-md p-2 mb-2">
             <div className="flex justify-between items-start mb-2">
                 <h3 className="text-xl font-bold text-gray-800">{ticket.title}</h3>
-                <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded font-semibold text-sm">
+                <button className={`text-white px-4 py-2 rounded-full font-semibold text-sm ${
+                    ticket.status === 'Open' ? 'bg-green-500 hover:bg-green-600' :
+                    ticket.status === 'In Progress' ? 'bg-orange-500 hover:bg-orange-600' : 'bg-blue-500'
+                    
+                 }`}>
                     {ticket.status || "Open"}
                 </button>
             </div>
