@@ -17,7 +17,7 @@ const TicketsCard = ({ticket, setSelectedTickets=[], setInprogress, selectedTick
                 setInprogress(prev => prev + 1);
             }}
 
-            className="bg-white flex flex-col border border-gray-200 rounded-lg shadow-md p-2 mb-2">
+            className="bg-white flex flex-col border border-gray-200 rounded-lg shadow-md p-2 mb-2 cursor-pointer">
             <div className="flex justify-between items-start mb-3">
                 <h3 className="text-xl font-bold text-gray-800">{ticket.title}</h3>
                 <button className={`text-white px-4 py-2 rounded-full font-semibold text-sm ${

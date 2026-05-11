@@ -3,10 +3,18 @@ import { useEffect, useState } from "react";
 import TicketsCard from "./TicketsCard";
 import TaskStatus from "../Task-Status/TaskStatus";
 
-const Tickets = ({setResolved, setInprogress, resolvedTasks=[], setResolvedTasks}) => {
+const Tickets = ({setResolved, setInprogress, resolvedTasks=[], setResolvedTasks, showForm, setShowForm }) => {
     // const ticketsData = use(ticketsPromise);                       // tickets data immutable
     const [tickets, setTickets] = useState([]);                       // main api data
     const [selectedTickets, setSelectedTickets] = useState([]);
+    const [formData, setFormData] = useState({
+        title: "",
+        description: "",
+        customer: "",
+        priority: "Low",
+        status: "Open"
+    });
+    
 
     useEffect(() => {
     const fetchData = async () => {
@@ -21,6 +29,97 @@ const Tickets = ({setResolved, setInprogress, resolvedTasks=[], setResolvedTasks
     // console.log(selectedTickets);
 
     return (
+    <>
+
+        {showForm && (
+            <div className="bg-white p-4 rounded-xl shadow-md mb-4">
+
+                <h2 className="font-bold mb-2">Create New Ticket</h2>
+
+                <input
+                    placeholder="Title"
+                    className="border p-2 w-full mb-2"
+                    value={formData.title}
+                    onChange={(e) =>
+                        setFormData(prev => ({
+                            ...prev,
+                            title: e.target.value
+                        }))
+                    }
+                />
+
+                <textarea
+                    placeholder="Description"
+                    className="border p-2 w-full mb-2"
+                    value={formData.description}
+                    onChange={(e) =>
+                        setFormData(prev => ({
+                            ...prev,
+                            description: e.target.value
+                        }))
+                    }
+                />
+
+                <input
+                    placeholder="Customer"
+                    className="border p-2 w-full mb-2"
+                    value={formData.customer}
+                    onChange={(e) =>
+                        setFormData(prev => ({
+                            ...prev,
+                            customer: e.target.value
+                        }))
+                    }
+                />
+
+                <select
+                    className="border p-2 w-full mb-2"
+                    value={formData.priority}
+                    onChange={(e) =>
+                        setFormData(prev => ({
+                            ...prev,
+                            priority: e.target.value
+                        }))
+                    }
+                >
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select>
+
+                <button
+                    onClick={() => {
+
+                        const newTicket = {
+                            id: Date.now(),
+                            title: formData.title,
+                            description: formData.description,
+                            customer: formData.customer,
+                            priority: formData.priority,
+                            status: formData.status,
+                            createdAt: new Date().toLocaleDateString()
+                        };
+
+                        setTickets(prev => [...prev, newTicket]);
+
+                        setFormData({
+                            title: "",
+                            description: "",
+                            customer: "",
+                            priority: "Low",
+                            status: "Open"
+                        });
+
+                        setShowForm(false);
+                    }}
+                    className="bg-blue-500 text-white px-4 py-2 rounded"
+                    >
+                    Add Ticket
+                </button>
+
+            </div>
+        )}
+
         <div className="flex  gap-4 w-full">
            <div className="grid grid-cols-2 gap-4 mt-2 w-2/3">
             {tickets?.length > 0 ? (
@@ -101,7 +200,10 @@ const Tickets = ({setResolved, setInprogress, resolvedTasks=[], setResolvedTasks
                 
             </div>
         </div>
-    )
+    </>
+    
+)
+
 };
 
 export default Tickets;

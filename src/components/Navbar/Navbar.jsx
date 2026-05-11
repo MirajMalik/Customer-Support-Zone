@@ -1,4 +1,4 @@
-const Navbar = () => {
+const Navbar = ({setShowForm}) => {
     return (
         <nav className="fixed top-0 left-0 right-0 bg-slate-100 text-black h-16 flex items-center justify-between px-15 z-50">
             <div className='font-bold px-2'>
@@ -11,7 +11,11 @@ const Navbar = () => {
                 <a href="" className='hover:text-gray-300'>Blog</a>
                 <a href="" className='hover:text-gray-300'>Download</a>
                 <a href="" className='hover:text-gray-300'>Contact</a>
-                <button className='bg-red-500 hover:bg-red-600 px-4 py-2 ml-2 rounded font-semibold'>+ New Ticket</button>
+                <button 
+                    onClick={() => setShowForm(true)}
+                    className='bg-red-500 hover:bg-red-600 px-4 py-2 ml-2 rounded font-semibold'>
+                        + New Ticket
+                </button>
             </div>
         </nav>
     );
