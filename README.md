@@ -38,3 +38,6 @@ Each ticket contains:
 - Drag and drop task management
 - Authentication system
 - Search and filtering
+
+## Live Link
+- gleeful-gumption-df8e12.netlify.app
