@@ -1,25 +1,36 @@
 // import React from 'react'
-import { use, useState } from "react";  
+import { useEffect, useState } from "react";  
 import TicketsCard from "./TicketsCard";
 import TaskStatus from "../Task-Status/TaskStatus";
 
-const Tickets = ({ ticketsPromise, setResolved, setInprogress, resolvedTasks=[], setResolvedTasks}) => {
-    const ticketsData = use(ticketsPromise);
+const Tickets = ({setResolved, setInprogress, resolvedTasks=[], setResolvedTasks}) => {
+    // const ticketsData = use(ticketsPromise);                       // tickets data immutable
+    const [tickets, setTickets] = useState([]);                       // main api data
     const [selectedTickets, setSelectedTickets] = useState([]);
+
+    useEffect(() => {
+    const fetchData = async () => {
+        const res = await fetch("/tickets.json");
+        const data = await res.json();
+        setTickets(data);
+    };
+
+    fetchData();
+    }, []);
 
     // console.log(selectedTickets);
 
     return (
         <div className="flex  gap-4 w-full">
            <div className="grid grid-cols-2 gap-4 mt-2 w-2/3">
-            {ticketsData?.length > 0 ? (
-                ticketsData.map((ticket) => (
+            {tickets?.length > 0 ? (
+                tickets.map((ticket) => (
                     <TicketsCard 
                         key = {ticket.id} 
                         ticket = {ticket} 
-                        setSelectedTickets = {setSelectedTickets}
-                        setInprogress = {setInprogress}
                         selectedTickets = {selectedTickets}
+                        setSelectedTickets = {setSelectedTickets}
+                        setInprogress = {setInprogress} 
                         setResolvedTasks = {setResolvedTasks}
                     />
                 ))
@@ -37,6 +48,7 @@ const Tickets = ({ ticketsPromise, setResolved, setInprogress, resolvedTasks=[],
                     selectedTickets.map((ticket) => (
                         <TaskStatus 
                             key = {ticket.id} 
+                            setTickets = {setTickets}
                             selectedTickets = {ticket} 
                             setSelectedTickets = {setSelectedTickets}
                             resolvedTasks = {resolvedTasks}

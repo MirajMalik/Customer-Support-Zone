@@ -10,12 +10,12 @@ function App() {
    const [ resolvedTasks, setResolvedTasks] = useState([])
 
 
-  const fetchTickets = async () => {
-    const res = await fetch('/tickets.json')
-    return res.json()
-  };
+  // const fetchTickets = async () => {
+  //   const res = await fetch('/tickets.json')
+  //   return res.json()
+  // };
 
-  const ticketsPromise = fetchTickets();
+  // const ticketsPromise = fetchTickets();
   
   return (
     <div className='min-h-screen'>
@@ -28,7 +28,7 @@ function App() {
       <div className="max-w-7xl mx-auto px-4 pt-16">
         <Suspense fallback = {<span className=" flex items-center justify-center mx-auto">Loading..</span>}>
           <Tickets 
-              ticketsPromise = {ticketsPromise} 
+              // ticketsPromise = {ticketsPromise} 
               resolvedTasks = {resolvedTasks} 
               setResolvedTasks = {setResolvedTasks} 
               setResolved = {setResolved} 
