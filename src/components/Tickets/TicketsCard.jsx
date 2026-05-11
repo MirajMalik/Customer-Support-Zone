@@ -1,10 +1,21 @@
 
 
-const TicketsCard = ({ticket, setSelectedTicket}) => {
+const TicketsCard = ({ticket, setSelectedTicket, setInprogress, selectedTickets}) => {
     return (
         <div 
             key = {ticket.id}
-            onClick = {() => setSelectedTicket(prev => [...prev, ticket])}
+            onClick = {() => {
+                const exists = selectedTickets.find(
+                    t => t.id === ticket.id
+                );
+
+                if (exists) return;
+
+                setSelectedTicket(prev => [...prev, ticket]);
+
+                setInprogress(prev => prev + 1);
+            }}
+
             className="bg-white flex flex-col border border-gray-200 rounded-lg shadow-md p-2 mb-2">
             <div className="flex justify-between items-start mb-3">
                 <h3 className="text-xl font-bold text-gray-800">{ticket.title}</h3>
