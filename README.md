@@ -1,16 +1,40 @@
-# React + Vite
+# Ticket Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React-based ticket management application for tracking tasks and their status.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- View all tickets in a responsive card layout
+- Create new tickets dynamically
+- Select tickets for task tracking
+- Move tasks to completed/resolved section
+- Track:
+  - In Progress tasks
+  - Resolved tasks
+- Remove completed tasks
+- Dynamic status and priority badges
+- Real-time UI updates using React state
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Tailwind CSS
 
-## Expanding the ESLint configuration
+## Ticket Information
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Each ticket contains:
+
+- Title
+- Description
+- Customer
+- Priority
+- Status
+- Created Date
+
+## Future Improvements
+
+- Edit tickets
+- Persistent storage with localStorage or backend
+- Drag and drop task management
+- Authentication system
+- Search and filtering
