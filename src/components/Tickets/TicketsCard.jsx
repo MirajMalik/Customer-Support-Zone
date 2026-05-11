@@ -1,17 +1,18 @@
 
 
-const TicketsCard = ({ticket, setSelectedTicket, setInprogress, selectedTickets}) => {
+const TicketsCard = ({ticket, setSelectedTickets=[], setInprogress, selectedTickets}) => {
+    // console.log("selectedTickets:", selectedTickets);
     return (
         <div 
             key = {ticket.id}
             onClick = {() => {
-                const exists = selectedTickets.find(
+                const exists = selectedTickets?.find(
                     t => t.id === ticket.id
                 );
 
                 if (exists) return;
 
-                setSelectedTicket(prev => [...prev, ticket]);
+                setSelectedTickets(prev => [...prev, ticket]);
 
                 setInprogress(prev => prev + 1);
             }}
