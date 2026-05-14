@@ -3,9 +3,8 @@ import { useEffect, useState } from "react";
 import TicketsCard from "./TicketsCard";
 import TaskStatus from "../Task-Status/TaskStatus";
 
-const Tickets = ({setResolved, setInprogress, resolvedTasks=[], setResolvedTasks, showForm, setShowForm }) => {
+const Tickets = ({tickets, setTickets, setResolved, setInprogress, resolvedTasks=[], setResolvedTasks, showForm, setShowForm }) => {
     // const ticketsData = use(ticketsPromise);                       // tickets data immutable
-    const [tickets, setTickets] = useState([]);                       // main api data
     const [selectedTickets, setSelectedTickets] = useState([]);
     const [formData, setFormData] = useState({
         title: "",
@@ -17,6 +16,7 @@ const Tickets = ({setResolved, setInprogress, resolvedTasks=[], setResolvedTasks
     
 
     useEffect(() => {
+    if (tickets.length > 0) return;
     const fetchData = async () => {
         const res = await fetch("/tickets.json");
         const data = await res.json();

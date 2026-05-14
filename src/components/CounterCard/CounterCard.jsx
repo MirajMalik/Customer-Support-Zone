@@ -7,7 +7,7 @@ const CounterCard = ({resolved, inProgress}) => {
     ];
 
     return (
-        <div className="pt-10 w-full md:w-2/3 flex mx-auto mt-12">
+        <div className="w-full mb-10 flex mx-auto mt-10">
             <div className="grid grid-cols-2 gap-6 mx-auto w-full flex">
                 {cards.map((card, index) => (
                     <div

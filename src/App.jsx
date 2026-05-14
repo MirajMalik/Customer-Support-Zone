@@ -1,30 +1,33 @@
 import './App.css'
-import Navbar from './components/Navbar/Navbar'
 import CounterCard from './components/CounterCard/CounterCard'
 import Tickets from './components/Tickets/Tickets';
-import { Suspense, useState } from 'react';
+import { Suspense } from 'react';
+import { useOutletContext } from 'react-router';
 
 function App() {
-   const [ resolved, setResolved ] = useState(0)
-   const [ inProgress, setInprogress ] = useState(0);
-   const [ resolvedTasks, setResolvedTasks] = useState([])
-   const [showForm, setShowForm] = useState(false);
+  const {
+    tickets,
+    setTickets,
+    resolved,
+    setResolved,
+    inProgress,
+    setInprogress,
+    resolvedTasks,
+    setResolvedTasks,
+    showForm,
+    setShowForm
+  } = useOutletContext();
 
-  
   return (
-    <div className='min-h-screen'>
-      <Navbar
-        setShowForm = {setShowForm}
-      /> 
-
-      <CounterCard 
+    <div className="py-4">
+        <CounterCard 
           resolved={resolved} 
           inProgress={inProgress}
-      />   
-
-      <div className="max-w-7xl mx-auto px-4 pt-16">
+        /> 
         <Suspense fallback = {<span className=" flex items-center justify-center mx-auto">Loading..</span>}>
           <Tickets 
+              tickets = {tickets}
+              setTickets = {setTickets}
               resolvedTasks = {resolvedTasks} 
               setResolvedTasks = {setResolvedTasks} 
               setResolved = {setResolved} 
@@ -33,7 +36,6 @@ function App() {
               setShowForm = {setShowForm}
           />
         </Suspense>
-      </div>
     </div>
   )
 }
