@@ -15,7 +15,7 @@ const Root = () => {
             <Navbar setShowForm={setShowForm} />
             <main className="flex-grow pt-16">
                 <div className="max-w-7xl mx-auto px-4">
-                    <Outlet context={{ 
+                    <Outlet context={{                                                 // sending context prop to the outlet component / child components
                         tickets,
                         setTickets,
                         showForm, 

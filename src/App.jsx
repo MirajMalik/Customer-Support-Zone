@@ -16,7 +16,7 @@ function App() {
     setResolvedTasks,
     showForm,
     setShowForm
-  } = useOutletContext();
+  } = useOutletContext();                               // useOutletContext hook receives the data
 
   return (
     <div className="py-4">
